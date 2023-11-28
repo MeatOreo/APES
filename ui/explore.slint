@@ -1,0 +1,51 @@
+import { Button, VerticalBox, TabWidget } from "std-widgets.slint";
+import { StandardListView , TabBarImpl, LineEdit} from "std-widgets.slint";
+
+export component ExploreWindow inherits Window {
+
+    // Golden Ratio Preferred
+    width: 809px;
+    height: 500px;
+
+    
+
+    HorizontalLayout 
+    {
+        VerticalLayout 
+        {
+            HorizontalLayout 
+            {
+                padding: 3px;
+                spacing: 3px;
+                height: 30px;
+                alignment: stretch;                
+                Button 
+                {
+                    text:"+";
+                }
+                LineEdit 
+                {
+
+                }
+            }
+            StandardListView 
+            {
+                width: 160px;
+                model: [{text: "Blue"}, {text: "Red"}];
+            }
+        }
+        TabWidget 
+        {
+            Tab
+            {
+                title: "First";
+                Rectangle {background: orange;}
+            }
+            Tab
+            {
+                title: "Second";
+                Rectangle {background: blue;}
+            }
+        }
+    }
+}
