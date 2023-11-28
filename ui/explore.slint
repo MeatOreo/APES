@@ -1,54 +1,43 @@
 import { Button, VerticalBox, TabWidget } from "std-widgets.slint";
-import { StandardListView , TabBarImpl, LineEdit} from "std-widgets.slint";
+import { StandardListView , TabBarImpl, LineEdit, ListView} from "std-widgets.slint";
+import {TagLibrary, QuickAccess} from "controls.slint";
+import { TabContext } from "context.slint";
+
 
 export component ExploreWindow inherits Window {
 
+    no-frame: true;
     // Golden Ratio Preferred
     width: 809px;
     height: 500px;
 
     
-
     HorizontalLayout 
     {
-        VerticalLayout 
-        {
-            HorizontalLayout 
-            {
-                // THIS SHOULD ALL BE PROPORTIONAL
-                padding: 4px;
-                padding-top: 2px;
-                spacing: 4px;
-                height: 36px;
-                alignment: stretch;                
-                Button 
-                {
-                    width <=> self.height;
-                    text:"+";
-                }
-                LineEdit 
-                {
+        padding: 1px;
 
-                }
-            }
-            StandardListView 
-            {
-                width: 160px;
-                model: [{text: "Blue"}, {text: "Red"}];
-            }
-        }
-        TabWidget 
+        controlColumn := VerticalLayout
         {
-            Tab
+            width: 309px;
+            padding: 2px;
+            QuickAccess {}
+            Rectangle 
             {
-                title: "First";
-                Rectangle {background: orange;}
+                height: 1px;
+                background: magenta;
             }
-            Tab
-            {
-                title: "Second";
-                Rectangle {background: blue;}
-            }
+            TagLibrary {}
         }
+
+        Rectangle
+        {
+            width: 1px;
+            background: gray;
+        }
+
+        TabContext {}
+
+
     }
 }
+

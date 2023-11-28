@@ -1,0 +1,38 @@
+import { TabWidget , Button, LineEdit, ListView, StandardListView} from "std-widgets.slint";
+
+component NavBar inherits HorizontalLayout
+{
+    height: 30px;
+    Button {text: "B";}
+    Button {text: "R";}
+    LineEdit {}
+    Button {text: "Q";}
+}
+
+export component TabContext inherits TabWidget
+{
+    Tab
+    {
+        title: "This Tab";
+        Rectangle
+        {
+            background: #1f1f1f;
+        }
+        VerticalLayout 
+        {
+            padding: 1px;
+        
+            NavBar {}
+            
+            ListView {}
+        }
+    }
+    Tab
+    {
+        title: "That Tab";
+    }
+}
+    
+
+
+    
